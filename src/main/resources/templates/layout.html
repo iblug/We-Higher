@@ -23,24 +23,32 @@
 
 </head>
 
-<body>
-<!-- Sidebar -->
-<div class="sidebar" th:replace="~{fragments/sidebar_new :: sidebarFragment}"></div>
+<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed aside-fixed aside-secondary-disabled">
+<div class="d-flex flex-column flex-root">
+    <!--begin::Page-->
+    <div class="page d-flex flex-row flex-column-fluid">
 
-<!-- Navbar -->
-<div class="navbar" th:replace="~{fragments/navbar_new :: navbarFragment}"></div>
+        <!-- Sidebar -->
+        <div class="sidebar" th:replace="~{fragments/sidebar_new :: sidebarFragment}"></div>
 
-<!-- Main content -->
-<div class="main-content" style="margin-left: 100px;">
+        <!-- Main content -->
+        <!--        <div class="main-content" style="margin-left: 100px;">-->
+
         <!--begin::Wrapper-->
         <div class="wrapper d-flex flex-column flex-column-auto" id="kt_wrapper">
+            <!-- Navbar -->
+            <div class="navbar" th:replace="~{fragments/navbar_new :: navbarFragment}"></div>
+            <!--begin::Content-->
             <th:block layout:fragment="content"></th:block>
         </div>
+        <!-- Footer -->
+        <div class="footer" th:replace="~{fragments/footer :: footerFragment}"></div>
+
+        <!--        </div>-->
+
+
+    </div>
 </div>
-
-<!-- Footer -->
-<div class="footer" th:replace="~{fragments/footer :: footerFragment}"></div>
-
 <!-- content JavaScript -->
 <th:block layout:fragment="script"></th:block>
 
