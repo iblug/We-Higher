@@ -1,5 +1,7 @@
 package com.example.demo.member;
 
+import com.example.demo.chat.ChatRoom;
+import com.example.demo.chat.ChatRoomDao;
 import com.example.demo.member.dto.MemberJoinDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -12,12 +14,15 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
 public class MemberService implements UserDetailsService {
     private final MemberDao dao;
     private final PasswordEncoder passwordEncoder;
+    private final ChatRoomDao chatRoomDao;
 
     public MemberDto create(MemberJoinDto memberJoinDto) {
         Member member = new Member().toEntity(memberJoinDto);
@@ -130,6 +135,16 @@ public class MemberService implements UserDetailsService {
     public Page<Member> getListMain(int page) {
         Pageable pageable = PageRequest.of(page, 5);
         return this.dao.findAll(pageable);
+    }
+
+    public List<Member> getNonParticipantsMembers(int roomId) {
+        ChatRoom chatRoom = chatRoomDao.findById(roomId).orElseThrow(() -> new IllegalArgumentException("Invalid roomId: " + roomId));
+        Set<Member> participants = chatRoom.getParticipants();
+
+        List<Member> allMembers = dao.findAll();
+        allMembers.removeAll(participants);
+
+        return allMembers;
     }
 
 }

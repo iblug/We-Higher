@@ -60,7 +60,7 @@ function sendMessage() {
                     senderPk: senderPk,
                     roomPk: roomId,
                     timestamp: timestamp,
-                    senderProfile : senderProfile,
+                    senderProfile: senderProfile,
                 }))
                 $('#messageInput').val('');
             })
@@ -86,7 +86,6 @@ function recvMessage(recv) {
 
     scroll.scrollTop = parseInt(scroll.scrollHeight);
 
-    // TODO: scroll (완료)
     // TODO: recv객체...
     // TODO: in/out 분기 수정..
 }
@@ -119,7 +118,10 @@ function makeMessageIn(recv) {
         .append($('<div/>', {class: 'ms-3'})
             .append($('<a/>', {class: 'fs-5 fw-bolder text-gray-900 text-hover-primary me-1'}).attr('href', '#').text(recv.sender))
             .append($('<span/>', {class: 'text-muted fs-7 mb-1'}).text(recv.timestamp)))
-    let textDiv = $('<div/>', {class: 'p-5 rounded bg-light-info text-dark fw-bold mw-lg-400px text-start', css: {'white-space': 'pre-line'}}).attr('data-kt-element', 'message-text').text(recv.message)
+    let textDiv = $('<div/>', {
+        class: 'p-5 rounded bg-light-info text-dark fw-bold mw-lg-400px text-start',
+        css: {'white-space': 'pre-line'}
+    }).attr('data-kt-element', 'message-text').text(recv.message)
 
     msgDiv.append(wrapDiv.append(userDiv).append(textDiv))
 
@@ -135,11 +137,42 @@ function makeMessageOut(recv) {
             .append($('<a/>', {class: 'fs-5 fw-bolder text-gray-900 text-hover-primary ms-1'}).attr('href', '#').text(recv.sender)))
         .append($('<div/>', {class: 'symbol  symbol-35px symbol-circle'})
             .append($('<img/>').attr('alt', 'Pic').attr('src', recv.senderProfile)))
-    let textDiv = $('<div/>', {class: 'p-5 rounded bg-light-primary text-dark fw-bold mw-lg-400px text-end', css: {'white-space': 'pre-line'}}).attr('data-kt-element', 'message-text').text(recv.message)
+    let textDiv = $('<div/>', {
+        class: 'p-5 rounded bg-light-primary text-dark fw-bold mw-lg-400px text-end',
+        css: {'white-space': 'pre-line'}
+    }).attr('data-kt-element', 'message-text').text(recv.message)
 
     msgDiv.append(wrapDiv.append(userDiv).append(textDiv))
 
     return msgDiv
+}
+
+// 초대
+function invitation() {
+    var params = new URLSearchParams()
+    let participants = document.querySelectorAll('input[name="invitation"]:checked')
+    let participantsArray = Array.from(participants).map(c => c.value)
+
+    params.append("invitation", participantsArray)
+    axios
+        .post('/chat/room/invite/' + roomId,
+            params,
+            {
+                headers: {
+                    'X-CSRF-TOKEN': csrftoken
+                }
+            }
+        )
+        .then(function (response) {
+            alert("초대에 성공하였습니다.")
+            participants.forEach(function (participant) {
+                participant.checked = false;
+            })
+        })
+        .catch(function (response) {
+            console.log(response)
+            alert("초대에 실패하였습니다.");
+        });
 }
 
 $(document).ready(function () {
@@ -151,15 +184,19 @@ $(document).ready(function () {
             sendMessage();
         }
     });
-    $('#messageInput').keydown(function(event){
-        if(event.altKey && event.which == 83) { // 83 is the keyCode for 's'
+    $('#messageInput').keydown(function (event) {
+        if (event.altKey && event.which == 83) { // 83 is the keyCode for 's'
             sendMessage();
             // event.preventDefault(); // Prevents the default action
         }
     });
 
+    $('#invite-m').click(invitation)
+
     let scroll = document.querySelector('#messages')
     scroll.scrollTop = parseInt(scroll.scrollHeight);
 
     connect();
+
+
 });

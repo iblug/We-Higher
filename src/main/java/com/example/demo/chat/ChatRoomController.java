@@ -10,10 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 @RequiredArgsConstructor
 @Controller
@@ -76,9 +73,11 @@ public class ChatRoomController {
     public String roomDetail(Model model, @PathVariable int roomId) {
         ChatRoom chatRoom = chatRoomService.getById(roomId);
         List<ChatMessage> clist = chatMessageService.getByRoomId(roomId);
+        List<Member> nlist = memberService.getNonParticipantsMembers(roomId);
 
         model.addAttribute("chatRoom", chatRoom);
         model.addAttribute("clist", clist);
+        model.addAttribute("nlist", nlist);
         return "chat/roomdetail";
     }
 
@@ -99,6 +98,32 @@ public class ChatRoomController {
 
         ChatRoom chatRoom = chatRoomService.getById(roomId);
         chatRoom.getParticipants().removeIf(member -> member.getId().equals(loginMember.getId()));
+
+        chatRoomService.edit(chatRoom);
+
+        return flag;
+    }
+
+    // 채팅방 초대
+    @PostMapping("/room/invite/{roomId}")
+    @ResponseBody
+    public boolean roomOut(@PathVariable int roomId, @RequestParam("invitation") Set<Member> invitation) {
+        boolean flag = true;
+        System.out.println("invitation = " + invitation);
+        ChatRoom chatRoom = chatRoomService.getById(roomId);
+
+//        System.out.println("chatRoom = " + chatRoom.getParticipants());
+
+
+        Set<Member> s = new HashSet<>();
+        s.addAll(chatRoom.getParticipants());
+        s.addAll(invitation);
+        chatRoom.setParticipants(s);
+
+//        System.out.println("roomId = " + roomId);
+//        System.out.println("s = " + s);
+//        System.out.println("chatRoom = " + chatRoom.getParticipants());
+
 
         chatRoomService.edit(chatRoom);
 

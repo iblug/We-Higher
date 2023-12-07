@@ -54,8 +54,10 @@
                                     <div class="symbol  symbol-35px symbol-circle "
                                          th:each="m, loop : ${chatRoom.participants}">
                                         <!-- <span class="symbol-label  bg-light-primary text-primary 40px " th:text="${#strings.substring(m.name, 0, 1)}" th:if="${#strings.isEmpty(m.originFname)}"></span> -->
-                                        <img th:if="${#strings.isEmpty(m.originFname)}" src="/img/default.png" alt="image"/>
-                                        <img th:if="${!#strings.isEmpty(m.originFname)}" th:src="@{'/profile/' + ${m.originFname}}" alt="image"/>
+                                        <img th:if="${#strings.isEmpty(m.originFname)}" src="/img/default.png"
+                                             alt="image"/>
+                                        <img th:if="${!#strings.isEmpty(m.originFname)}"
+                                             th:src="@{'/profile/' + ${m.originFname}}" alt="image"/>
                                     </div>
                                     <!--begin::All users-->
                                     <a href="#" class="symbol symbol-35px symbol-circle"
@@ -73,7 +75,7 @@
                             <!--end::Title-->
 
                             <!--begin::Card toolbar-->
-                            <div class="card-toolbar d-none">
+                            <div class="card-toolbar">
                                 <!--begin::Menu-->
                                 <div class="me-n3">
                                     <button class="btn btn-sm btn-icon btn-active-light-primary"
@@ -199,8 +201,11 @@
                                                 <div class="d-flex align-items-center mb-2">
                                                     <!--begin::Avatar-->
                                                     <div class="symbol  symbol-35px symbol-circle ">
-                                                        <img th:if="${#strings.isEmpty(c.sender.originFname)}" src="/img/default.png" alt="image"/>
-                                                        <img th:if="${!#strings.isEmpty(c.sender.originFname)}" th:src="@{'/profile/' + ${c.sender.originFname}}" alt="image"/>
+                                                        <img th:if="${#strings.isEmpty(c.sender.originFname)}"
+                                                             src="/img/default.png" alt="image"/>
+                                                        <img th:if="${!#strings.isEmpty(c.sender.originFname)}"
+                                                             th:src="@{'/profile/' + ${c.sender.originFname}}"
+                                                             alt="image"/>
                                                     </div>
                                                     <!--end::Avatar-->
                                                     <!--begin::Details-->
@@ -208,7 +213,8 @@
                                                         <a href="#"
                                                            class="fs-5 fw-bolder text-gray-900 text-hover-primary me-1"
                                                            th:text="${c.sender.name}"></a>
-                                                        <span class="text-muted fs-7 mb-1" th:text="${#temporals.format(c.timestamp, 'yyyy-MM-dd HH:mm:ss')}"></span>
+                                                        <span class="text-muted fs-7 mb-1"
+                                                              th:text="${#temporals.format(c.timestamp, 'yyyy-MM-dd HH:mm:ss')}"></span>
                                                     </div>
                                                     <!--end::Details-->
 
@@ -217,7 +223,8 @@
 
                                                 <!--begin::Text-->
                                                 <div class="p-5 rounded bg-light-info text-dark fw-bold mw-lg-400px text-start"
-                                                     data-kt-element="message-text" style="white-space: pre-line;" th:text="${c.message}">
+                                                     data-kt-element="message-text" style="white-space: pre-line;"
+                                                     th:text="${c.message}">
                                                 </div>
                                                 <!--end::Text-->
                                             </div>
@@ -234,7 +241,8 @@
                                                 <div class="d-flex align-items-center mb-2">
                                                     <!--begin::Details-->
                                                     <div class="me-3">
-                                                        <span class="text-muted fs-7 mb-1" th:text="${#temporals.format(c.timestamp, 'yyyy-MM-dd HH:mm:ss')}"></span>
+                                                        <span class="text-muted fs-7 mb-1"
+                                                              th:text="${#temporals.format(c.timestamp, 'yyyy-MM-dd HH:mm:ss')}"></span>
                                                         <a href="#"
                                                            class="fs-5 fw-bolder text-gray-900 text-hover-primary ms-1"
                                                            th:text="${c.sender.name}"></a>
@@ -243,8 +251,11 @@
 
                                                     <!--begin::Avatar-->
                                                     <div class="symbol  symbol-35px symbol-circle ">
-                                                        <img th:if="${#strings.isEmpty(c.sender.originFname)}" src="/img/default.png" alt="image"/>
-                                                        <img th:if="${!#strings.isEmpty(c.sender.originFname)}" th:src="@{'/profile/' + ${c.sender.originFname}}" alt="image"/>
+                                                        <img th:if="${#strings.isEmpty(c.sender.originFname)}"
+                                                             src="/img/default.png" alt="image"/>
+                                                        <img th:if="${!#strings.isEmpty(c.sender.originFname)}"
+                                                             th:src="@{'/profile/' + ${c.sender.originFname}}"
+                                                             alt="image"/>
                                                     </div>
                                                     <!--end::Avatar-->
                                                 </div>
@@ -252,7 +263,8 @@
 
                                                 <!--begin::Text-->
                                                 <div class="p-5 rounded bg-light-primary text-dark fw-bold mw-lg-400px text-end"
-                                                     data-kt-element="message-text" style="white-space: pre-line;" th:text="${c.message}">
+                                                     data-kt-element="message-text" style="white-space: pre-line;"
+                                                     th:text="${c.message}">
                                                 </div>
                                                 <!--end::Text-->
                                             </div>
@@ -357,8 +369,10 @@
                                         <div class="d-flex align-items-center">
                                             <!--begin::Avatar-->
                                             <div class="symbol symbol-35px symbol-circle">
-                                                <img th:if="${#strings.isEmpty(m.originFname)}" src="/img/default.png" alt="image"/>
-                                                <img th:if="${!#strings.isEmpty(m.originFname)}" th:src="@{'/profile/' + ${m.originFname}}" alt="image"/>
+                                                <img th:if="${#strings.isEmpty(m.originFname)}" src="/img/default.png"
+                                                     alt="image"/>
+                                                <img th:if="${!#strings.isEmpty(m.originFname)}"
+                                                     th:src="@{'/profile/' + ${m.originFname}}" alt="image"/>
                                                 <!-- <span class="symbol-label bg-light-danger text-danger fw-bold">M</span> -->
                                             </div>
                                             <!--end::Avatar-->
@@ -3037,37 +3051,17 @@
                     <!--begin::Heading-->
                     <div class="text-center mb-13">
                         <!--begin::Title-->
-                        <h1 class="mb-3">Invite a Friend</h1>
+                        <h1 class="mb-3">Invite</h1>
                         <!--end::Title-->
-
-                        <!--begin::Description-->
-                        <div class="text-muted fw-bold fs-5">
-                            If you need more info, please check out
-                            <a href="#" class="link-primary fw-bolder">FAQ Page</a>.
-                        </div>
-                        <!--end::Description-->
                     </div>
                     <!--end::Heading-->
 
                     <!--begin::Google Contacts Invite-->
-                    <div class="btn btn-light-primary fw-bolder w-100 mb-8">
-                        <img alt="Logo" src="/jet-html-free/assets/media/svg/brand-logos/google-icon.svg"
-                             class="h-20px me-3"/>
-                        Invite Gmail Contacts
+                    <div class="fw-bolder w-100 mb-8 text-center">
+                        <button class="btn btn-primary" id="invite-m">초대하기</button>
                     </div>
                     <!--end::Google Contacts Invite-->
 
-                    <!--begin::Separator-->
-                    <div class="separator d-flex flex-center mb-8">
-                        <span class="text-uppercase bg-body fs-7 fw-bold text-muted px-3">or</span>
-                    </div>
-                    <!--end::Separator-->
-
-                    <!--begin::Textarea-->
-                    <textarea class="form-control form-control-solid mb-8" rows="3"
-                              placeholder="Type or paste emails here">
-                </textarea>
-                    <!--end::Textarea-->
 
                     <!--begin::Users-->
                     <div class="mb-10">
@@ -3078,625 +3072,73 @@
                         <!--begin::List-->
                         <div class="mh-300px scroll-y me-n7 pe-7">
                             <!--begin::User-->
-                            <div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
+                            <div class="d-flex flex-stack py-4" th:each="m, loop : ${nlist}">
                                 <!--begin::Details-->
                                 <div class="d-flex align-items-center">
                                     <!--begin::Avatar-->
-                                    <div class="symbol symbol-35px symbol-circle">
-                                        <img alt="Pic" src="/jet-html-free/assets/media/avatars/300-6.jpg"/>
-                                    </div>
-                                    <!--end::Avatar-->
-
+                                    <div class="symbol  symbol-45px symbol-circle ">
+                                        <img th:if="${#strings.isEmpty(m.originFname)}" src="/img/default.png"
+                                             alt="image"/>
+                                        <img th:if="${!#strings.isEmpty(m.originFname)}"
+                                             th:src="@{'/profile/' + ${m.originFname}}" alt="image"/>
+                                        <div class="symbol-badge bg-success start-100 top-100 border-4 h-15px w-15px ms-n2 mt-n2"
+                                             th:if="${m.cstatus eq 1}"></div>
+                                    </div><!--end::Avatar-->
                                     <!--begin::Details-->
-                                    <div class="ms-5">
-                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Emma
-                                            Smith</a>
+                                    <div class="ms-6">
+                                        <!--begin::Name-->
+                                        <a href="#"
+                                           class="d-flex align-items-center fs-5 fw-bolder text-dark text-hover-primary">
+                                            <span th:text="${m.name}"></span>
+                                            <span class="badge badge-light fs-8 fw-bold ms-2"
+                                                  th:text="|${m.deptName} ${m.companyRankName}|"></span>
+                                        </a>
+                                        <!--end::Name-->
 
-                                        <div class="fw-bold text-muted">smith@kpmg.com</div>
+                                        <!--begin::Email-->
+                                        <div class="fw-bold text-muted" th:text="${m.email}"></div>
+                                        <!--end::Email-->
                                     </div>
                                     <!--end::Details-->
                                 </div>
                                 <!--end::Details-->
 
-                                <!--begin::Access menu-->
-                                <div class="ms-2 w-100px">
-                                    <select class="form-select form-select-solid form-select-sm" data-control="select2"
-                                            data-hide-search="true">
-                                        <option value="1">Guest</option>
-                                        <option value="2" selected>Owner</option>
-                                        <option value="3">Can Edit</option>
-                                    </select>
-                                </div>
-                                <!--end::Access menu-->
-                            </div>
-                            <!--end::User-->
-                            <!--begin::User-->
-                            <div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                <!--begin::Details-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Avatar-->
-                                    <div class="symbol symbol-35px symbol-circle">
-                                                                                    <span class="symbol-label bg-light-danger text-danger fw-bold">
-                                                M                                            </span>
+                                <!--begin::checkbox-->
+                                <div class="p-0">
+                                    <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                        <input class="form-check-input" type="checkbox"
+                                               th:value="${m.id}" name="invitation"/>
                                     </div>
-                                    <!--end::Avatar-->
-
-                                    <!--begin::Details-->
-                                    <div class="ms-5">
-                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Melody
-                                            Macy</a>
-
-                                        <div class="fw-bold text-muted">melody@altbox.com</div>
-                                    </div>
-                                    <!--end::Details-->
                                 </div>
-                                <!--end::Details-->
-
-                                <!--begin::Access menu-->
-                                <div class="ms-2 w-100px">
-                                    <select class="form-select form-select-solid form-select-sm" data-control="select2"
-                                            data-hide-search="true">
-                                        <option value="1" selected>Guest</option>
-                                        <option value="2">Owner</option>
-                                        <option value="3">Can Edit</option>
-                                    </select>
-                                </div>
-                                <!--end::Access menu-->
-                            </div>
-                            <!--end::User-->
-                            <!--begin::User-->
-                            <div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                <!--begin::Details-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Avatar-->
-                                    <div class="symbol symbol-35px symbol-circle">
-                                        <img alt="Pic" src="/jet-html-free/assets/media/avatars/300-1.jpg"/>
-                                    </div>
-                                    <!--end::Avatar-->
-
-                                    <!--begin::Details-->
-                                    <div class="ms-5">
-                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Max
-                                            Smith</a>
-
-                                        <div class="fw-bold text-muted">max@kt.com</div>
-                                    </div>
-                                    <!--end::Details-->
-                                </div>
-                                <!--end::Details-->
-
-                                <!--begin::Access menu-->
-                                <div class="ms-2 w-100px">
-                                    <select class="form-select form-select-solid form-select-sm" data-control="select2"
-                                            data-hide-search="true">
-                                        <option value="1">Guest</option>
-                                        <option value="2">Owner</option>
-                                        <option value="3" selected>Can Edit</option>
-                                    </select>
-                                </div>
-                                <!--end::Access menu-->
-                            </div>
-                            <!--end::User-->
-                            <!--begin::User-->
-                            <div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                <!--begin::Details-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Avatar-->
-                                    <div class="symbol symbol-35px symbol-circle">
-                                        <img alt="Pic" src="/jet-html-free/assets/media/avatars/300-5.jpg"/>
-                                    </div>
-                                    <!--end::Avatar-->
-
-                                    <!--begin::Details-->
-                                    <div class="ms-5">
-                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Sean
-                                            Bean</a>
-
-                                        <div class="fw-bold text-muted">sean@dellito.com</div>
-                                    </div>
-                                    <!--end::Details-->
-                                </div>
-                                <!--end::Details-->
-
-                                <!--begin::Access menu-->
-                                <div class="ms-2 w-100px">
-                                    <select class="form-select form-select-solid form-select-sm" data-control="select2"
-                                            data-hide-search="true">
-                                        <option value="1">Guest</option>
-                                        <option value="2" selected>Owner</option>
-                                        <option value="3">Can Edit</option>
-                                    </select>
-                                </div>
-                                <!--end::Access menu-->
-                            </div>
-                            <!--end::User-->
-                            <!--begin::User-->
-                            <div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                <!--begin::Details-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Avatar-->
-                                    <div class="symbol symbol-35px symbol-circle">
-                                        <img alt="Pic" src="/jet-html-free/assets/media/avatars/300-25.jpg"/>
-                                    </div>
-                                    <!--end::Avatar-->
-
-                                    <!--begin::Details-->
-                                    <div class="ms-5">
-                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Brian
-                                            Cox</a>
-
-                                        <div class="fw-bold text-muted">brian@exchange.com</div>
-                                    </div>
-                                    <!--end::Details-->
-                                </div>
-                                <!--end::Details-->
-
-                                <!--begin::Access menu-->
-                                <div class="ms-2 w-100px">
-                                    <select class="form-select form-select-solid form-select-sm" data-control="select2"
-                                            data-hide-search="true">
-                                        <option value="1">Guest</option>
-                                        <option value="2">Owner</option>
-                                        <option value="3" selected>Can Edit</option>
-                                    </select>
-                                </div>
-                                <!--end::Access menu-->
-                            </div>
-                            <!--end::User-->
-                            <!--begin::User-->
-                            <div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                <!--begin::Details-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Avatar-->
-                                    <div class="symbol symbol-35px symbol-circle">
-                                                                                    <span class="symbol-label bg-light-warning text-warning fw-bold">
-                                                C                                            </span>
-                                    </div>
-                                    <!--end::Avatar-->
-
-                                    <!--begin::Details-->
-                                    <div class="ms-5">
-                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Mikaela
-                                            Collins</a>
-
-                                        <div class="fw-bold text-muted">mik@pex.com</div>
-                                    </div>
-                                    <!--end::Details-->
-                                </div>
-                                <!--end::Details-->
-
-                                <!--begin::Access menu-->
-                                <div class="ms-2 w-100px">
-                                    <select class="form-select form-select-solid form-select-sm" data-control="select2"
-                                            data-hide-search="true">
-                                        <option value="1">Guest</option>
-                                        <option value="2" selected>Owner</option>
-                                        <option value="3">Can Edit</option>
-                                    </select>
-                                </div>
-                                <!--end::Access menu-->
-                            </div>
-                            <!--end::User-->
-                            <!--begin::User-->
-                            <div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                <!--begin::Details-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Avatar-->
-                                    <div class="symbol symbol-35px symbol-circle">
-                                        <img alt="Pic" src="/jet-html-free/assets/media/avatars/300-9.jpg"/>
-                                    </div>
-                                    <!--end::Avatar-->
-
-                                    <!--begin::Details-->
-                                    <div class="ms-5">
-                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Francis
-                                            Mitcham</a>
-
-                                        <div class="fw-bold text-muted">f.mit@kpmg.com</div>
-                                    </div>
-                                    <!--end::Details-->
-                                </div>
-                                <!--end::Details-->
-
-                                <!--begin::Access menu-->
-                                <div class="ms-2 w-100px">
-                                    <select class="form-select form-select-solid form-select-sm" data-control="select2"
-                                            data-hide-search="true">
-                                        <option value="1">Guest</option>
-                                        <option value="2">Owner</option>
-                                        <option value="3" selected>Can Edit</option>
-                                    </select>
-                                </div>
-                                <!--end::Access menu-->
-                            </div>
-                            <!--end::User-->
-                            <!--begin::User-->
-                            <div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                <!--begin::Details-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Avatar-->
-                                    <div class="symbol symbol-35px symbol-circle">
-                                                                                    <span class="symbol-label bg-light-danger text-danger fw-bold">
-                                                O                                            </span>
-                                    </div>
-                                    <!--end::Avatar-->
-
-                                    <!--begin::Details-->
-                                    <div class="ms-5">
-                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Olivia
-                                            Wild</a>
-
-                                        <div class="fw-bold text-muted">olivia@corpmail.com</div>
-                                    </div>
-                                    <!--end::Details-->
-                                </div>
-                                <!--end::Details-->
-
-                                <!--begin::Access menu-->
-                                <div class="ms-2 w-100px">
-                                    <select class="form-select form-select-solid form-select-sm" data-control="select2"
-                                            data-hide-search="true">
-                                        <option value="1">Guest</option>
-                                        <option value="2" selected>Owner</option>
-                                        <option value="3">Can Edit</option>
-                                    </select>
-                                </div>
-                                <!--end::Access menu-->
-                            </div>
-                            <!--end::User-->
-                            <!--begin::User-->
-                            <div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                <!--begin::Details-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Avatar-->
-                                    <div class="symbol symbol-35px symbol-circle">
-                                                                                    <span class="symbol-label bg-light-primary text-primary fw-bold">
-                                                N                                            </span>
-                                    </div>
-                                    <!--end::Avatar-->
-
-                                    <!--begin::Details-->
-                                    <div class="ms-5">
-                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Neil
-                                            Owen</a>
-
-                                        <div class="fw-bold text-muted">owen.neil@gmail.com</div>
-                                    </div>
-                                    <!--end::Details-->
-                                </div>
-                                <!--end::Details-->
-
-                                <!--begin::Access menu-->
-                                <div class="ms-2 w-100px">
-                                    <select class="form-select form-select-solid form-select-sm" data-control="select2"
-                                            data-hide-search="true">
-                                        <option value="1" selected>Guest</option>
-                                        <option value="2">Owner</option>
-                                        <option value="3">Can Edit</option>
-                                    </select>
-                                </div>
-                                <!--end::Access menu-->
-                            </div>
-                            <!--end::User-->
-                            <!--begin::User-->
-                            <div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                <!--begin::Details-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Avatar-->
-                                    <div class="symbol symbol-35px symbol-circle">
-                                        <img alt="Pic" src="/jet-html-free/assets/media/avatars/300-23.jpg"/>
-                                    </div>
-                                    <!--end::Avatar-->
-
-                                    <!--begin::Details-->
-                                    <div class="ms-5">
-                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Dan
-                                            Wilson</a>
-
-                                        <div class="fw-bold text-muted">dam@consilting.com</div>
-                                    </div>
-                                    <!--end::Details-->
-                                </div>
-                                <!--end::Details-->
-
-                                <!--begin::Access menu-->
-                                <div class="ms-2 w-100px">
-                                    <select class="form-select form-select-solid form-select-sm" data-control="select2"
-                                            data-hide-search="true">
-                                        <option value="1">Guest</option>
-                                        <option value="2">Owner</option>
-                                        <option value="3" selected>Can Edit</option>
-                                    </select>
-                                </div>
-                                <!--end::Access menu-->
-                            </div>
-                            <!--end::User-->
-                            <!--begin::User-->
-                            <div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                <!--begin::Details-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Avatar-->
-                                    <div class="symbol symbol-35px symbol-circle">
-                                                                                    <span class="symbol-label bg-light-danger text-danger fw-bold">
-                                                E                                            </span>
-                                    </div>
-                                    <!--end::Avatar-->
-
-                                    <!--begin::Details-->
-                                    <div class="ms-5">
-                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Emma
-                                            Bold</a>
-
-                                        <div class="fw-bold text-muted">emma@intenso.com</div>
-                                    </div>
-                                    <!--end::Details-->
-                                </div>
-                                <!--end::Details-->
-
-                                <!--begin::Access menu-->
-                                <div class="ms-2 w-100px">
-                                    <select class="form-select form-select-solid form-select-sm" data-control="select2"
-                                            data-hide-search="true">
-                                        <option value="1">Guest</option>
-                                        <option value="2" selected>Owner</option>
-                                        <option value="3">Can Edit</option>
-                                    </select>
-                                </div>
-                                <!--end::Access menu-->
-                            </div>
-                            <!--end::User-->
-                            <!--begin::User-->
-                            <div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                <!--begin::Details-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Avatar-->
-                                    <div class="symbol symbol-35px symbol-circle">
-                                        <img alt="Pic" src="/jet-html-free/assets/media/avatars/300-12.jpg"/>
-                                    </div>
-                                    <!--end::Avatar-->
-
-                                    <!--begin::Details-->
-                                    <div class="ms-5">
-                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Ana
-                                            Crown</a>
-
-                                        <div class="fw-bold text-muted">ana.cf@limtel.com</div>
-                                    </div>
-                                    <!--end::Details-->
-                                </div>
-                                <!--end::Details-->
-
-                                <!--begin::Access menu-->
-                                <div class="ms-2 w-100px">
-                                    <select class="form-select form-select-solid form-select-sm" data-control="select2"
-                                            data-hide-search="true">
-                                        <option value="1" selected>Guest</option>
-                                        <option value="2">Owner</option>
-                                        <option value="3">Can Edit</option>
-                                    </select>
-                                </div>
-                                <!--end::Access menu-->
-                            </div>
-                            <!--end::User-->
-                            <!--begin::User-->
-                            <div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                <!--begin::Details-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Avatar-->
-                                    <div class="symbol symbol-35px symbol-circle">
-                                                                                    <span class="symbol-label bg-light-info text-info fw-bold">
-                                                A                                            </span>
-                                    </div>
-                                    <!--end::Avatar-->
-
-                                    <!--begin::Details-->
-                                    <div class="ms-5">
-                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Robert
-                                            Doe</a>
-
-                                        <div class="fw-bold text-muted">robert@benko.com</div>
-                                    </div>
-                                    <!--end::Details-->
-                                </div>
-                                <!--end::Details-->
-
-                                <!--begin::Access menu-->
-                                <div class="ms-2 w-100px">
-                                    <select class="form-select form-select-solid form-select-sm" data-control="select2"
-                                            data-hide-search="true">
-                                        <option value="1">Guest</option>
-                                        <option value="2">Owner</option>
-                                        <option value="3" selected>Can Edit</option>
-                                    </select>
-                                </div>
-                                <!--end::Access menu-->
-                            </div>
-                            <!--end::User-->
-                            <!--begin::User-->
-                            <div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                <!--begin::Details-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Avatar-->
-                                    <div class="symbol symbol-35px symbol-circle">
-                                        <img alt="Pic" src="/jet-html-free/assets/media/avatars/300-13.jpg"/>
-                                    </div>
-                                    <!--end::Avatar-->
-
-                                    <!--begin::Details-->
-                                    <div class="ms-5">
-                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">John
-                                            Miller</a>
-
-                                        <div class="fw-bold text-muted">miller@mapple.com</div>
-                                    </div>
-                                    <!--end::Details-->
-                                </div>
-                                <!--end::Details-->
-
-                                <!--begin::Access menu-->
-                                <div class="ms-2 w-100px">
-                                    <select class="form-select form-select-solid form-select-sm" data-control="select2"
-                                            data-hide-search="true">
-                                        <option value="1">Guest</option>
-                                        <option value="2">Owner</option>
-                                        <option value="3" selected>Can Edit</option>
-                                    </select>
-                                </div>
-                                <!--end::Access menu-->
-                            </div>
-                            <!--end::User-->
-                            <!--begin::User-->
-                            <div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                <!--begin::Details-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Avatar-->
-                                    <div class="symbol symbol-35px symbol-circle">
-                                                                                    <span class="symbol-label bg-light-success text-success fw-bold">
-                                                L                                            </span>
-                                    </div>
-                                    <!--end::Avatar-->
-
-                                    <!--begin::Details-->
-                                    <div class="ms-5">
-                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Lucy
-                                            Kunic</a>
-
-                                        <div class="fw-bold text-muted">lucy.m@fentech.com</div>
-                                    </div>
-                                    <!--end::Details-->
-                                </div>
-                                <!--end::Details-->
-
-                                <!--begin::Access menu-->
-                                <div class="ms-2 w-100px">
-                                    <select class="form-select form-select-solid form-select-sm" data-control="select2"
-                                            data-hide-search="true">
-                                        <option value="1">Guest</option>
-                                        <option value="2" selected>Owner</option>
-                                        <option value="3">Can Edit</option>
-                                    </select>
-                                </div>
-                                <!--end::Access menu-->
-                            </div>
-                            <!--end::User-->
-                            <!--begin::User-->
-                            <div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                <!--begin::Details-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Avatar-->
-                                    <div class="symbol symbol-35px symbol-circle">
-                                        <img alt="Pic" src="/jet-html-free/assets/media/avatars/300-21.jpg"/>
-                                    </div>
-                                    <!--end::Avatar-->
-
-                                    <!--begin::Details-->
-                                    <div class="ms-5">
-                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Ethan
-                                            Wilder</a>
-
-                                        <div class="fw-bold text-muted">ethan@loop.com.au</div>
-                                    </div>
-                                    <!--end::Details-->
-                                </div>
-                                <!--end::Details-->
-
-                                <!--begin::Access menu-->
-                                <div class="ms-2 w-100px">
-                                    <select class="form-select form-select-solid form-select-sm" data-control="select2"
-                                            data-hide-search="true">
-                                        <option value="1" selected>Guest</option>
-                                        <option value="2">Owner</option>
-                                        <option value="3">Can Edit</option>
-                                    </select>
-                                </div>
-                                <!--end::Access menu-->
-                            </div>
-                            <!--end::User-->
-                            <!--begin::User-->
-                            <div class="d-flex flex-stack py-4 ">
-                                <!--begin::Details-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Avatar-->
-                                    <div class="symbol symbol-35px symbol-circle">
-                                                                                    <span class="symbol-label bg-light-primary text-primary fw-bold">
-                                                N                                            </span>
-                                    </div>
-                                    <!--end::Avatar-->
-
-                                    <!--begin::Details-->
-                                    <div class="ms-5">
-                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Neil
-                                            Owen</a>
-
-                                        <div class="fw-bold text-muted">owen.neil@gmail.com</div>
-                                    </div>
-                                    <!--end::Details-->
-                                </div>
-                                <!--end::Details-->
-
-                                <!--begin::Access menu-->
-                                <div class="ms-2 w-100px">
-                                    <select class="form-select form-select-solid form-select-sm" data-control="select2"
-                                            data-hide-search="true">
-                                        <option value="1">Guest</option>
-                                        <option value="2">Owner</option>
-                                        <option value="3" selected>Can Edit</option>
-                                    </select>
-                                </div>
-                                <!--end::Access menu-->
+                                <!--end::checkbox-->
                             </div>
                             <!--end::User-->
                         </div>
-                        <!--end::List-->
+                        <!--end::Modal body-->
                     </div>
-                    <!--end::Users-->
-
-                    <!--begin::Notice-->
-                    <div class="d-flex flex-stack">
-                        <!--begin::Label-->
-                        <div class="me-5 fw-bold">
-                            <label class="fs-6">Adding Users by Team Members</label>
-                            <div class="fs-7 text-muted">If you need more info, please check budget planning</div>
-                        </div>
-                        <!--end::Label-->
-
-                        <!--begin::Switch-->
-                        <label class="form-check form-switch form-check-custom form-check-solid">
-                            <input class="form-check-input" type="checkbox" value="1" checked="checked"/>
-
-                            <span class="form-check-label fw-bold text-muted">
-                            Allowed
-                        </span>
-                        </label>
-                        <!--end::Switch-->
-                    </div>
-                    <!--end::Notice-->
+                    <!--end::Modal content-->
                 </div>
-                <!--end::Modal body-->
+                <!--end::Modal dialog-->
             </div>
-            <!--end::Modal content-->
+            <!--end::Modal - Invite Friend-->
+            <!--end::Modals-->
         </div>
-        <!--end::Modal dialog-->
-    </div>
-    <!--end::Modal - Invite Friend-->
-    <!--end::Modals-->
-</div>
 
-<th:block layout:fragment="script">
-    <script>
-        var hostUrl = "/jet-html-free/assets/";
-    </script>
-    <!--begin::Page Vendors Javascript(used by this page)-->
-    <script src="/js/chat/datatables.bundle.js"></script>
-    <!--end::Page Vendors Javascript-->
-    <!--begin::Page Custom Javascript(used by this page)-->
-    <script src="/js/chat/widgets.bundle.js"></script>
-    <script src="/js/chat/widgets.js"></script>
-    <script src="/js/chat/intro.js"></script>
-    <script src="/js/chat/upgrade-plan.js"></script>
-    <script src="/js/chat/users-search.js"></script>
-    <script src="/js/chat/roomdetail.js" type='text/javascript'></script>
-    <!--end::Page Custom Javascript-->
-</th:block>
+        <th:block layout:fragment="script">
+            <script>
+                var hostUrl = "/jet-html-free/assets/";
+            </script>
+            <!--begin::Page Vendors Javascript(used by this page)-->
+            <script src="/js/chat/datatables.bundle.js"></script>
+            <!--end::Page Vendors Javascript-->
+            <!--begin::Page Custom Javascript(used by this page)-->
+            <script src="/js/chat/widgets.bundle.js"></script>
+            <script src="/js/chat/widgets.js"></script>
+            <script src="/js/chat/intro.js"></script>
+            <script src="/js/chat/upgrade-plan.js"></script>
+            <script src="/js/chat/users-search.js"></script>
+            <script src="/js/chat/roomdetail.js" type='text/javascript'></script>
+            <!--end::Page Custom Javascript-->
+        </th:block>
 
 </html>
